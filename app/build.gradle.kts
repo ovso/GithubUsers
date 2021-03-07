@@ -59,9 +59,9 @@ dependencies {
   // dagger hilt
   implementation("com.google.dagger:hilt-android:${Versions.hilt_android}")
   kapt("com.google.dagger:hilt-android-compiler:${Versions.hilt_android}")
-  implementation("androidx.hilt:hilt-common:${Versions.hilt_viewmodel}")
-  implementation("androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hilt_viewmodel}")
-  kapt("androidx.hilt:hilt-compiler:${Versions.hilt_viewmodel}")
+  implementation("androidx.hilt:hilt-common:${Versions.hilt}")
+  implementation("androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hilt}")
+  kapt("androidx.hilt:hilt-compiler:${Versions.hilt}")
 
   testImplementation("junit:junit:4.13.2")
   androidTestImplementation("androidx.test.ext:junit:1.1.2")
