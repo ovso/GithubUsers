@@ -1,4 +1,5 @@
 plugins {
+//    id("com.diffplug.gradle.spotless") version "5.11.0"
     id("com.android.application")
     id("kotlin-android")
 }
@@ -53,3 +54,5 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.2")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
 }
+
+//apply(from = "${rootDir}/spotless.gradle")
