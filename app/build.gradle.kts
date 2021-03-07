@@ -1,8 +1,13 @@
 plugins {
-//    id("com.diffplug.gradle.spotless") version "5.11.0"
   id("com.android.application")
   id("kotlin-android")
-}
+  id("kotlin-kapt")
+  id("kotlin-parcelize")
+  id("com.google.android.gms.oss-licenses-plugin")
+  id("org.ajoberstar.grgit") version "4.0.2"
+//  id("com.google.gms.google-services")
+//  id("com.google.firebase.crashlytics")
+  id("dagger.hilt.android.plugin")}
 
 android {
   compileSdkVersion(DefaultConfig.compileSdk)
@@ -50,6 +55,14 @@ dependencies {
   implementation("androidx.appcompat:appcompat:1.2.0")
   implementation("com.google.android.material:material:1.3.0")
   implementation("androidx.constraintlayout:constraintlayout:2.0.4")
+
+  // dagger hilt
+  implementation("com.google.dagger:hilt-android:${Versions.hilt_android}")
+  kapt("com.google.dagger:hilt-android-compiler:${Versions.hilt_android}")
+  implementation("androidx.hilt:hilt-common:${Versions.hilt_viewmodel}")
+  implementation("androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hilt_viewmodel}")
+  kapt("androidx.hilt:hilt-compiler:${Versions.hilt_viewmodel}")
+
   testImplementation("junit:junit:4.13.2")
   androidTestImplementation("androidx.test.ext:junit:1.1.2")
   androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
