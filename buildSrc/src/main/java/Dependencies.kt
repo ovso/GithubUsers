@@ -41,9 +41,9 @@ object Versions {
 
   const val mvrx = "1.5.1"
 
-  const val hilt_plugin = "2.28.1-alpha"
-  const val hilt_android = "2.28.1-alpha"
-  const val hilt = "1.0.0-alpha02"
+  const val hilt_plugin = "2.33-beta"
+  const val hilt_android = "2.33-beta"
+  const val hilt = "1.0.0-alpha03"
   const val dagger = "2.28.1"
   const val dagger_android = "2.27"
 
