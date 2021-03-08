@@ -1,3 +1,5 @@
+@file:Suppress("SpellCheckingInspection")
+
 plugins {
   id("com.android.application")
   id("kotlin-android")
@@ -7,7 +9,8 @@ plugins {
   id("org.ajoberstar.grgit") version "4.0.2"
 //  id("com.google.gms.google-services")
 //  id("com.google.firebase.crashlytics")
-  id("dagger.hilt.android.plugin")}
+  id("dagger.hilt.android.plugin")
+}
 
 android {
   compileSdkVersion(DefaultConfig.compileSdk)
@@ -51,10 +54,22 @@ android {
 
 dependencies {
 
-  implementation("androidx.core:core-ktx:1.3.2")
-  implementation("androidx.appcompat:appcompat:1.2.0")
-  implementation("com.google.android.material:material:1.3.0")
-  implementation("androidx.constraintlayout:constraintlayout:2.0.4")
+  implementation("androidx.core:core-ktx:${Versions.core}")
+  implementation("androidx.appcompat:appcompat:${Versions.appcompat}")
+  implementation("com.google.android.material:material:${Versions.material}")
+  implementation("androidx.constraintlayout:constraintlayout:${Versions.constraintlayout}")
+
+  // activity
+  implementation("androidx.activity:activity-ktx:${Versions.activity}")
+
+  // fragment
+  implementation("androidx.fragment:fragment-ktx:${Versions.fragment}")
+
+  // navigation
+  implementation("androidx.navigation:navigation-ui-ktx:${Versions.navigation}")
+  implementation("androidx.navigation:navigation-fragment-ktx:${Versions.navigation}")
+  implementation("androidx.legacy:legacy-support-v4:1.0.0")
+  androidTestImplementation("androidx.navigation:navigation-testing:${Versions.navigation}")
 
   // dagger hilt
   implementation("com.google.dagger:hilt-android:${Versions.hilt_android}")
@@ -63,7 +78,7 @@ dependencies {
   implementation("androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hilt}")
   kapt("androidx.hilt:hilt-compiler:${Versions.hilt}")
 
-  testImplementation("junit:junit:4.13.2")
-  androidTestImplementation("androidx.test.ext:junit:1.1.2")
-  androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
+  testImplementation("junit:junit:${Versions.junit}")
+  androidTestImplementation("androidx.test.ext:junit:${Versions.atsl_junit}")
+  androidTestImplementation("androidx.test.espresso:espresso-core:${Versions.atsl_espresso}")
 }

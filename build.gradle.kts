@@ -9,7 +9,7 @@ buildscript {
   }
   dependencies {
     classpath("com.android.tools.build:gradle:${Versions.gradle}")
-    classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}")
+    classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.30")
     classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}")
 //    classpath("com.google.gms:google-services:${Versions.googleService}")
     classpath("com.google.android.gms:oss-licenses-plugin:${Versions.licensesPlugin}")
