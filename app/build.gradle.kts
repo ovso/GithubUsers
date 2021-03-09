@@ -72,6 +72,13 @@ dependencies {
   implementation("androidx.legacy:legacy-support-v4:1.0.0")
   androidTestImplementation("androidx.navigation:navigation-testing:${Versions.navigation}")
 
+  // architecture
+  implementation("com.airbnb.android:mavericks:${Versions.mavericks}")
+
+  // coroutine
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutine_android}")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutine_core}")
+
   // dagger hilt
   implementation("com.google.dagger:hilt-android:${Versions.hilt_android}")
   kapt("com.google.dagger:hilt-android-compiler:${Versions.hilt_android}")

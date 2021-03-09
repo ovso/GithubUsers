@@ -35,11 +35,11 @@ object Versions {
   const val rxjava3_rxandroid = "3.0.0"
   const val rxjava3_rxkotlin = "3.0.0"
   const val autodispose = "2.0.0"
-  const val coroutine_core = "1.3.9"
-  const val coroutine_android = "1.3.8"
+  const val coroutine_core = "1.4.3"
+  const val coroutine_android = "1.4.1"
   const val appcompat = "1.2.0"
 
-  const val mvrx = "1.5.1"
+  const val mavericks = "2.1.0"
 
   const val hilt_plugin = "2.33-beta"
   const val hilt_android = "2.33-beta"
