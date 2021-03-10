@@ -89,6 +89,10 @@ dependencies {
   implementation("androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hilt}")
   kapt("androidx.hilt:hilt-compiler:${Versions.hilt}")
 
+  // log
+  implementation("com.orhanobut:logger:${Versions.logger}")
+  implementation("com.jakewharton.timber:timber:${Versions.timber}")
+
   testImplementation("junit:junit:${Versions.junit}")
   androidTestImplementation("androidx.test.ext:junit:${Versions.atsl_junit}")
   androidTestImplementation("androidx.test.espresso:espresso-core:${Versions.atsl_espresso}")

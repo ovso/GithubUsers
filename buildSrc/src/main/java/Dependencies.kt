@@ -49,6 +49,7 @@ object Versions {
 
   const val licenses = "17.0.0"
   const val timber = "4.7.1"
+  const val logger = "2.2.0"
   const val androidyoutubeplayer = "10.0.5"
   const val koap = "1.0.1"
   const val shimmer = "0.5.0"
@@ -66,5 +67,4 @@ object Versions {
   const val atsl_core_testing = "2.1.0"
   const val atsl_work_testing = "2.4.0"
   const val junit = "4.13.2"
-
 }

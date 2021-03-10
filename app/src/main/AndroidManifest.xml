@@ -32,6 +32,10 @@
       <meta-data
         android:name="io.github.ovso.githubusers.initializer.MavericksInitializer"
         android:value="androidx.startup" />
+
+      <meta-data
+        android:name="io.github.ovso.githubusers.initializer.TimberInitializer"
+        android:value="androidx.startup" />
     </provider>
 
   </application>
