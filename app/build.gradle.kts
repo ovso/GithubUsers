@@ -79,6 +79,9 @@ dependencies {
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutine_android}")
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutine_core}")
 
+  // startup
+  implementation("androidx.startup:startup-runtime:${Versions.startup}")
+
   // dagger hilt
   implementation("com.google.dagger:hilt-android:${Versions.hilt_android}")
   kapt("com.google.dagger:hilt-android-compiler:${Versions.hilt_android}")

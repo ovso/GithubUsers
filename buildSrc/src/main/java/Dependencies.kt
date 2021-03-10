@@ -21,7 +21,7 @@ object Versions {
   const val activity = "1.2.0"
   const val fragment = "1.3.0"
   const val navigation = "2.3.3"
-  const val startup = "1.0.0-beta01"
+  const val startup = "1.0.0"
   const val paging = "2.1.2"
   const val room = "2.2.5"
   const val firebase_bom = "25.12.0"

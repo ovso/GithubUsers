@@ -1,4 +1,4 @@
-package io.github.ovso.githubusers.app
+package io.github.ovso.githubusers
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
