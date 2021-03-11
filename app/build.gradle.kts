@@ -93,6 +93,19 @@ dependencies {
   implementation("com.orhanobut:logger:${Versions.logger}")
   implementation("com.jakewharton.timber:timber:${Versions.timber}")
 
+  // network
+  implementation("com.squareup.retrofit2:retrofit:${Versions.retrofit}")
+  implementation("com.squareup.retrofit2:converter-gson:${Versions.retrofit}")
+  implementation("com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofit}")
+  implementation("com.squareup.retrofit2:converter-moshi:${Versions.retrofit}")
+  implementation("com.squareup.okhttp3:logging-interceptor:${Versions.logging_interceptor}")
+  implementation("com.github.akarnokd:rxjava3-retrofit-adapter:${Versions.retrofit_rxjava3}")
+
+  // rx
+  implementation("io.reactivex.rxjava3:rxjava:${Versions.rxjava3}")
+  implementation("io.reactivex.rxjava3:rxandroid:${Versions.rxjava3_rxandroid}")
+  implementation("io.reactivex.rxjava3:rxkotlin:${Versions.rxjava3_rxkotlin}")
+
   testImplementation("junit:junit:${Versions.junit}")
   androidTestImplementation("androidx.test.ext:junit:${Versions.atsl_junit}")
   androidTestImplementation("androidx.test.espresso:espresso-core:${Versions.atsl_espresso}")
