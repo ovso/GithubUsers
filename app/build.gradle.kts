@@ -106,6 +106,10 @@ dependencies {
   implementation("io.reactivex.rxjava3:rxandroid:${Versions.rxjava3_rxandroid}")
   implementation("io.reactivex.rxjava3:rxkotlin:${Versions.rxjava3_rxkotlin}")
 
+  // datastore
+  implementation("androidx.datastore:datastore:${Versions.datastore}")
+  implementation("androidx.datastore:datastore-rxjava3:${Versions.datastore}")
+
   testImplementation("junit:junit:${Versions.junit}")
   androidTestImplementation("androidx.test.ext:junit:${Versions.atsl_junit}")
   androidTestImplementation("androidx.test.espresso:espresso-core:${Versions.atsl_espresso}")

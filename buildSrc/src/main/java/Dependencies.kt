@@ -8,6 +8,7 @@ object DefaultConfig {
 }
 
 object Versions {
+  const val datastore = "1.0.0-alpha08"
   const val gradle = "7.0.0-alpha08"
   const val googleService = "4.3.4"
   const val licensesPlugin = "0.10.2"
