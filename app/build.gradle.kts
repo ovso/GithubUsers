@@ -107,8 +107,15 @@ dependencies {
   implementation("io.reactivex.rxjava3:rxkotlin:${Versions.rxjava3_rxkotlin}")
 
   // datastore
-  implementation("androidx.datastore:datastore:${Versions.datastore}")
+  implementation("androidx.datastore:datastore-preferences:${Versions.datastore}")
   implementation("androidx.datastore:datastore-rxjava3:${Versions.datastore}")
+
+  // lifecycle
+  implementation("androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}")
+  implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}")
+  implementation("androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}")
+  implementation("androidx.lifecycle:lifecycle-common-java8:${Versions.lifecycle}")
+  implementation("androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}")
 
   testImplementation("junit:junit:${Versions.junit}")
   androidTestImplementation("androidx.test.ext:junit:${Versions.atsl_junit}")
