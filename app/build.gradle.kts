@@ -108,7 +108,8 @@ dependencies {
 
   // datastore
   implementation("androidx.datastore:datastore-preferences:${Versions.datastore}")
-  implementation("androidx.datastore:datastore-rxjava3:${Versions.datastore}")
+  implementation("androidx.datastore:datastore-preferences-rxjava3:${Versions.datastore}")
+  implementation("androidx.datastore:datastore-preferences-core:${Versions.datastore}")
 
   // lifecycle
   implementation("androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}")
