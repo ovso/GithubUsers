@@ -14,20 +14,20 @@ class ConfigPreference(context: Context) {
   private val applicationContext = context.applicationContext
   private val dataStore: DataStore<Preferences> = applicationContext.createDataStore("config_prefs")
 
-
-  companion object {
-    val CONFIG_FIRST_RUN = booleanPreferencesKey("CONFIG_FIRST_RUN")
-  }
-
   suspend fun storeFirstRun(flag: Boolean) {
     dataStore.edit {
       it[CONFIG_FIRST_RUN] = flag
     }
   }
 
-  suspend fun isFirstRun(): Flow<Boolean> {
+  fun isFirstRun(): Flow<Boolean> {
     return dataStore.data.map {
       it[CONFIG_FIRST_RUN] ?: false
     }
   }
+
+  companion object {
+    private val CONFIG_FIRST_RUN = booleanPreferencesKey("CONFIG_FIRST_RUN")
+  }
+
 }
