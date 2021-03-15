@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
+import com.orhanobut.logger.Logger
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.ovso.githubusers.R
 import io.github.ovso.githubusers.base.BindingFragment
@@ -24,7 +25,7 @@ class MainFragment : BindingFragment<FragmentMainBinding>(R.layout.fragment_main
     }
 
     config.isFirstRun().asLiveData().observe(viewLifecycleOwner) {
-
+      Logger.d("isFirstRun: $it")
     }
   }
 
