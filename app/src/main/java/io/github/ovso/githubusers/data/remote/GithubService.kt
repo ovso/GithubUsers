@@ -9,4 +9,8 @@ interface GithubService {
 
   @GET("user")
   suspend fun getUser(): List<UserResponse>
+
+  companion object {
+
+  }
 }
