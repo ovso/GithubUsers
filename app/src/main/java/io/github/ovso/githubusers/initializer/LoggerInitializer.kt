@@ -11,7 +11,6 @@ class LoggerInitializer : Initializer<Unit> {
     Logger.addLogAdapter(object : AndroidLogAdapter() {
       override fun isLoggable(priority: Int, tag: String?): Boolean = DEBUG
     })
-    Logger.d("create")
   }
 
   override fun dependencies(): MutableList<Class<out Initializer<*>>> {
