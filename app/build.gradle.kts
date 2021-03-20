@@ -88,11 +88,22 @@ dependencies {
   implementation("androidx.startup:startup-runtime:${Versions.startup}")
 
   // dagger hilt
+/*
   implementation("com.google.dagger:hilt-android:${Versions.hilt_android}")
   kapt("com.google.dagger:hilt-android-compiler:${Versions.hilt_android}")
   implementation("androidx.hilt:hilt-common:${Versions.hilt}")
   implementation("androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hilt}")
   kapt("androidx.hilt:hilt-compiler:${Versions.hilt}")
+*/
+
+  implementation("com.google.dagger:hilt-android:2.33-beta")
+  kapt("com.google.dagger:hilt-compiler:2.33-beta")
+  // For instrumentation tests
+  androidTestImplementation("com.google.dagger:hilt-android-testing:2.33-beta")
+  kaptAndroidTest("com.google.dagger:hilt-compiler:2.33-beta")
+  // For local unit tests
+  testImplementation("com.google.dagger:hilt-android-testing:2.33-beta")
+  kaptTest("com.google.dagger:hilt-compiler:2.33-beta")
 
   // log
   implementation("com.orhanobut:logger:${Versions.logger}")
@@ -130,4 +141,8 @@ dependencies {
   testImplementation("junit:junit:${Versions.junit}")
   androidTestImplementation("androidx.test.ext:junit:${Versions.atsl_junit}")
   androidTestImplementation("androidx.test.espresso:espresso-core:${Versions.atsl_espresso}")
+}
+
+kapt {
+  correctErrorTypes = true
 }

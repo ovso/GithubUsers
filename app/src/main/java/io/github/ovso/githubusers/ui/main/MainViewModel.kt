@@ -19,9 +19,8 @@ class MainViewModel @Inject constructor(
     Logger.d("repository: $repository")
     Logger.d("savedStateHandle: $savedStateHandle")
     viewModelScope.launch {
-      Logger.d("Thread name: ${Thread.currentThread().name}")
       val users = repository.getUsers()
-      Logger.d("users: ${users.count()}")
+      Logger.d("users count: ${users.count()}")
     }
   }
 }
