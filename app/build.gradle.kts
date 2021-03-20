@@ -123,6 +123,10 @@ dependencies {
   implementation("androidx.lifecycle:lifecycle-common-java8:${Versions.lifecycle}")
   implementation("androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}")
 
+  // moshi
+  implementation("com.squareup.moshi:moshi-kotlin:${Versions.moshi}")
+  kapt("com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshi}")
+
   testImplementation("junit:junit:${Versions.junit}")
   androidTestImplementation("androidx.test.ext:junit:${Versions.atsl_junit}")
   androidTestImplementation("androidx.test.espresso:espresso-core:${Versions.atsl_espresso}")

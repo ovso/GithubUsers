@@ -28,7 +28,7 @@ object Versions {
   const val firebase_bom = "25.12.0"
   const val firebase_ads = "19.4.0"
   const val firebase_analytics = "17.6.0"
-  const val retrofit = "2.9.0"
+  const val retrofit = "2.7.2"
   const val retrofit_rxjava2 = "2.6.2"
   const val logging_interceptor = "4.7.2"
   const val retrofit_rxjava3 = "3.0.0"
@@ -39,6 +39,7 @@ object Versions {
   const val coroutine_core = "1.4.3"
   const val coroutine_android = "1.4.1"
   const val appcompat = "1.2.0"
+  const val moshi = "1.11.0"
 
   const val mavericks = "2.1.0"
 
