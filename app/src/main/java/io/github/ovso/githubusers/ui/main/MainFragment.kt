@@ -19,6 +19,7 @@ class MainFragment : BindingFragment<FragmentMainBinding>(R.layout.fragment_main
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
+
     val config = ConfigPreference(requireContext())
     viewLifecycleOwner.lifecycleScope.launch {
       config.storeFirstRun(true)

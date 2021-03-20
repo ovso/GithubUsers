@@ -4,12 +4,8 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import io.github.ovso.githubusers.data.remote.GithubDataSource
 import io.github.ovso.githubusers.data.remote.GithubService
-import io.github.ovso.githubusers.data.remote.HttpRequestInterceptor
-import okhttp3.OkHttpClient
-import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
+import io.github.ovso.githubusers.data.remote.UnsplashService
 import javax.inject.Singleton
 
 @Module
@@ -18,33 +14,13 @@ object NetworkModule {
 
   @Provides
   @Singleton
-  fun provideOkHttpClient(): OkHttpClient {
-    return OkHttpClient.Builder()
-      .addInterceptor(HttpRequestInterceptor())
-      .build()
+  fun provideGithubService(): GithubService {
+    return GithubService.create()
   }
 
   @Provides
   @Singleton
-  fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
-    return Retrofit.Builder()
-      .client(okHttpClient)
-      .baseUrl("https://api.github.com/")
-      .addConverterFactory(MoshiConverterFactory.create())
-      .build()
+  fun provideUnsplashService(): UnsplashService {
+    return UnsplashService.create()
   }
-
-  @Provides
-  @Singleton
-  fun provideGithubService(retrofit: Retrofit): GithubService {
-    return retrofit.create(GithubService::class.java)
-  }
-
-/*
-  @Provides
-  @Singleton
-  fun provideGithubDataSource(service:GithubService): GithubDataSource {
-    return GithubDataSource(pokedexService)
-  }
-*/
 }

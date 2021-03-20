@@ -7,17 +7,17 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
-interface GithubService {
+interface UnsplashService {
   @GET("users")
   suspend fun getUsers(): List<UserResponse>
 
   @GET("user")
-  suspend fun getUser(): UserResponse
+  suspend fun getUser(): List<UserResponse>
 
   companion object {
-    private const val BASE_URL = "https://api.github.com/"
+    private const val BASE_URL = "https://api.unsplash.com/"
 
-    fun create(): GithubService {
+    fun create(): UnsplashService {
       val logger = HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BASIC }
 
       val client = OkHttpClient.Builder()
@@ -29,7 +29,7 @@ interface GithubService {
         .client(client)
         .addConverterFactory(MoshiConverterFactory.create())
         .build()
-        .create(GithubService::class.java)
+        .create(UnsplashService::class.java)
     }
   }
 }
