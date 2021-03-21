@@ -1,8 +1,10 @@
 package io.github.ovso.githubusers.data.remote
 
 import io.github.ovso.githubusers.data.remote.model.UserResponse
+import io.github.ovso.githubusers.data.remote.model.UserResponse2
+
 
 interface GithubDataSource {
-  fun getUsers(): List<UserResponse>
-  fun getUser(): UserResponse
+  suspend fun getUsers(): List<UserResponse2>
+  suspend fun getUser(): UserResponse
 }

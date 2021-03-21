@@ -1,5 +1,6 @@
 package io.github.ovso.githubusers.data.remote
 
+import com.google.gson.JsonElement
 import io.github.ovso.githubusers.data.remote.model.UserResponse
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -8,11 +9,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
 interface UnsplashService {
-  @GET("users")
-  suspend fun getUsers(): List<UserResponse>
-
-  @GET("user")
-  suspend fun getUser(): List<UserResponse>
+  suspend fun getPhotos(): List<JsonElement>
 
   companion object {
     private const val BASE_URL = "https://api.unsplash.com/"
