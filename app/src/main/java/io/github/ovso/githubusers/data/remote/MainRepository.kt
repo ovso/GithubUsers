@@ -1,4 +1,3 @@
 package io.github.ovso.githubusers.data.remote
 
-interface MainRepository : GithubDataSource, UnsplashDataSource {
-}
+interface MainRepository : GithubDataSource, UnsplashDataSource

@@ -1,6 +1,6 @@
 package io.github.ovso.githubusers.data.remote
 
-import com.google.gson.JsonElement
+import io.github.ovso.githubusers.data.remote.model.UnsplashResponse
 import io.github.ovso.githubusers.data.remote.model.UserResponse
 import io.github.ovso.githubusers.data.remote.model.UserResponse2
 
@@ -16,7 +16,7 @@ class MainRepositoryImpl constructor(
     return githubService.getUser()
   }
 
-  override suspend fun getPhotos(): List<JsonElement> {
-    return unsplashService.getPhotos()
+  override suspend fun getPhotos(page: Int): List<UnsplashResponse> {
+    return unsplashService.getPhotos(page)
   }
 }

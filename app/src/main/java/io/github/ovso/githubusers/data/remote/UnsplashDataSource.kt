@@ -1,7 +1,7 @@
 package io.github.ovso.githubusers.data.remote
 
-import com.google.gson.JsonElement
+import io.github.ovso.githubusers.data.remote.model.UnsplashResponse
 
 interface UnsplashDataSource {
-  suspend fun getPhotos(): List<JsonElement>
+  suspend fun getPhotos(page: Int = 1): List<UnsplashResponse>
 }
