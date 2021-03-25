@@ -18,7 +18,14 @@ class ApiTest {
     val repo = MainRepositoryImpl(GithubService.create(), UnsplashService.create())
     runBlocking {
       val photos = repo.getPhotos(1)
-      println("thumb: ${photos.first().urls.thumb}")
+      Logger.d("thumb: ${photos.first().urls.thumb}")
+      Logger.d("count: ${photos.count()}")
+    }
+  }
+
+  object Logger {
+    fun d(msg: String) {
+      println(msg)
     }
   }
 }
