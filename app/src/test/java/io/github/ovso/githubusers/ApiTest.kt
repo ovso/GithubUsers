@@ -17,7 +17,6 @@ class ApiTest {
   fun mainRepository() {
     val repo = MainRepositoryImpl(GithubService.create(), UnsplashService.create())
     runBlocking {
-
       val photos = repo.getPhotos(1)
       println("thumb: ${photos.first().urls.thumb}")
     }
