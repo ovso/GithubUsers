@@ -21,6 +21,9 @@ class MainViewModel @Inject constructor(
     viewModelScope.launch {
       val users = repository.getUsers()
       Logger.d("users count: ${users.count()}")
+      val photos = repository.getPhotos(page = 1)
+      Logger.d("first: ${photos.first()}")
+      Logger.d("photos count: ${photos.count()}")
     }
   }
 }
