@@ -1,19 +1,18 @@
 package io.github.ovso.githubusers.di
 
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
-import dagger.hilt.android.scopes.ViewModelScoped
-import io.github.ovso.githubusers.data.remote.GithubService
-import io.github.ovso.githubusers.data.remote.MainRepository
-import io.github.ovso.githubusers.data.remote.MainRepositoryImpl
-import io.github.ovso.githubusers.data.remote.UnsplashService
 
 @Module
 @InstallIn(ViewModelComponent::class)
-object ViewModelMainModule {
+abstract class ViewModelMainModule {
 
+/*
+  @Binds
+  abstract fun provideMainRepository(mainRepository: MainRepositoryImpl):MainRepository
+*/
+/*
   @Provides
   @ViewModelScoped
   fun provideMainRepository(
@@ -25,4 +24,5 @@ object ViewModelMainModule {
       unsplashService
     )
   }
+*/
 }
