@@ -9,15 +9,10 @@
       type="io.github.ovso.githubusers.ui.main.MainViewModel" />
   </data>
 
-  <FrameLayout
+  <androidx.recyclerview.widget.RecyclerView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.MainFragment">
-
-    <androidx.recyclerview.widget.RecyclerView
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:overScrollMode="never"
-      android:scrollbars="none" />
-  </FrameLayout>
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    tools:context=".ui.main.MainFragment" />
 </layout>

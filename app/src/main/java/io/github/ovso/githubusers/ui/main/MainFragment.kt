@@ -28,6 +28,13 @@ class MainFragment : BindingFragment<FragmentMainBinding>(R.layout.fragment_main
     config.isFirstRun().asLiveData().observe(viewLifecycleOwner) {
       Logger.d("isFirstRun: $it")
     }
+    observe()
   }
 
+  private fun observe() {
+    val owner = viewLifecycleOwner
+    viewModel.photosFlow.asLiveData().observe(owner) {
+      Logger.d("fragment count: ${it.count()}")
+    }
+  }
 }
