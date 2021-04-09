@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import io.github.ovso.githubusers.databinding.ItemMainBinding
 
-/*
 class MainAdapter : RecyclerView.Adapter<MainViewHolder>() {
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
     return MainViewHolder.create(parent)
@@ -32,4 +31,3 @@ class MainViewHolder private constructor(
     }
   }
 }
-*/
