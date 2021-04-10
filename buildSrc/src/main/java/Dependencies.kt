@@ -9,7 +9,7 @@ object DefaultConfig {
 
 object Versions {
   const val datastore = "1.0.0-alpha06"
-  const val gradle = "7.0.0-alpha10"
+  const val gradle = "4.1.3"
   const val googleService = "4.3.4"
   const val licensesPlugin = "0.10.2"
   const val kotlin = "1.4.30"
@@ -40,12 +40,14 @@ object Versions {
   const val coroutine_android = "1.4.1"
   const val appcompat = "1.2.0"
   const val moshi = "1.11.0"
+  const val mvrx = "2.1.0"
 
   const val mavericks = "2.1.0"
 
   const val hilt_plugin = "2.33-beta"
   const val hilt_android = "2.33-beta"
   const val hilt = "1.0.0-beta01"
+  const val hilt_viewmodel = "1.0.0-alpha03"
   const val dagger = "2.28.1"
   const val dagger_android = "2.27"
 

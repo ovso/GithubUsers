@@ -7,11 +7,13 @@ plugins {
   id("kotlin-parcelize")
   id("com.google.android.gms.oss-licenses-plugin")
   id("org.ajoberstar.grgit") version "4.0.2"
-//  id("com.google.gms.google-services")
-//  id("com.google.firebase.crashlytics")
   id("dagger.hilt.android.plugin")
   id("androidx.navigation.safeargs.kotlin")
 }
+
+//  id("com.google.gms.google-services")
+//  id("com.google.firebase.crashlytics")
+
 
 android {
   compileSdkVersion(DefaultConfig.compileSdk)
@@ -27,7 +29,11 @@ android {
   }
 
   buildTypes {
-    release {
+    getByName("debug") {
+      isDebuggable = true
+    }
+
+    getByName("release") {
       isMinifyEnabled = false
       isDebuggable = false
       proguardFiles(getDefaultProguardFile(("proguard-android-optimize.txt")))
@@ -39,9 +45,6 @@ android {
         ?.toTypedArray()
 
       proguardFiles(*files ?: arrayOf())
-    }
-    debug {
-      isDebuggable = true
     }
   }
   compileOptions {
@@ -88,22 +91,20 @@ dependencies {
   implementation("androidx.startup:startup-runtime:${Versions.startup}")
 
   // dagger hilt
-/*
   implementation("com.google.dagger:hilt-android:${Versions.hilt_android}")
   kapt("com.google.dagger:hilt-android-compiler:${Versions.hilt_android}")
   implementation("androidx.hilt:hilt-common:${Versions.hilt}")
-  implementation("androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hilt}")
+  implementation("androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hilt_viewmodel}")
   kapt("androidx.hilt:hilt-compiler:${Versions.hilt}")
-*/
 
-  implementation("com.google.dagger:hilt-android:2.33-beta")
-  kapt("com.google.dagger:hilt-compiler:2.33-beta")
+//  implementation("com.google.dagger:hilt-android:2.33-beta")
+//  kapt("com.google.dagger:hilt-compiler:2.33-beta")
   // For instrumentation tests
-  androidTestImplementation("com.google.dagger:hilt-android-testing:2.33-beta")
-  kaptAndroidTest("com.google.dagger:hilt-compiler:2.33-beta")
+//  androidTestImplementation("com.google.dagger:hilt-android-testing:2.33-beta")
+//  kaptAndroidTest("com.google.dagger:hilt-compiler:2.33-beta")
   // For local unit tests
-  testImplementation("com.google.dagger:hilt-android-testing:2.33-beta")
-  kaptTest("com.google.dagger:hilt-compiler:2.33-beta")
+//  testImplementation("com.google.dagger:hilt-android-testing:2.33-beta")
+//  kaptTest("com.google.dagger:hilt-compiler:2.33-beta")
 
   // log
   implementation("com.orhanobut:logger:${Versions.logger}")
@@ -137,6 +138,8 @@ dependencies {
   // moshi
   implementation("com.squareup.moshi:moshi-kotlin:${Versions.moshi}")
   kapt("com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshi}")
+
+  implementation("com.airbnb.android:mavericks:${Versions.mvrx}")
 
   testImplementation("junit:junit:${Versions.junit}")
   androidTestImplementation("androidx.test.ext:junit:${Versions.atsl_junit}")

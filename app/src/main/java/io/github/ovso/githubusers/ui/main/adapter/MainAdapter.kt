@@ -18,7 +18,7 @@ class MainAdapter : RecyclerView.Adapter<MainViewHolder>() {
 
 class MainViewHolder private constructor(
   private val binding: ItemMainBinding
-) : RecyclerView.ViewHolder(binding.) {
+) : RecyclerView.ViewHolder(binding.root) {
 
   fun onBindViewHolder() {
   }
