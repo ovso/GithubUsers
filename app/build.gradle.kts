@@ -141,6 +141,8 @@ dependencies {
 
   implementation("com.airbnb.android:mavericks:${Versions.mvrx}")
 
+  implementation("io.coil-kt:coil:1.1.1")
+
   testImplementation("junit:junit:${Versions.junit}")
   androidTestImplementation("androidx.test.ext:junit:${Versions.atsl_junit}")
   androidTestImplementation("androidx.test.espresso:espresso-core:${Versions.atsl_espresso}")

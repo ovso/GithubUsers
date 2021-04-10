@@ -36,13 +36,19 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
       Logger.d("isFirstRun: $it")
     }
     observe()
+    setupRv()
     Logger.d("adapter: $adapter")
+  }
+
+  private fun setupRv() {
+    binding.root.adapter = adapter
   }
 
   private fun observe() {
     val owner = viewLifecycleOwner
     viewModel.photosFlow.asLiveData().observe(owner) {
       Logger.d("fragment count: ${it.count()}")
+      adapter.items = it.toMutableList()
     }
 
   }

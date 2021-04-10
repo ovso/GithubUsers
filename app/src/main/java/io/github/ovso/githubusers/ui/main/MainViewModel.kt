@@ -7,7 +7,7 @@ import com.orhanobut.logger.Logger
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.github.ovso.githubusers.data.mapper.toUnsplashModels
 import io.github.ovso.githubusers.data.remote.MainRepository
-import io.github.ovso.githubusers.data.view.UnsplashModel
+import io.github.ovso.githubusers.data.view.UnsplashItemModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -18,7 +18,7 @@ class MainViewModel @Inject constructor(
   savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
-  val photosFlow = MutableStateFlow<List<UnsplashModel>>(emptyList())
+  val photosFlow = MutableStateFlow<List<UnsplashItemModel>>(emptyList())
 
   init {
     Logger.d("repository: $repository")

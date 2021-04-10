@@ -8,7 +8,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath("com.android.tools.build:gradle:${Versions.gradle}")
+    classpath("com.android.tools.build:gradle:4.2.0-rc01")
     classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}")
     classpath("com.google.android.gms:oss-licenses-plugin:${Versions.licensesPlugin}")
     classpath("com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt_plugin}")

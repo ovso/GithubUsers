@@ -1,14 +1,14 @@
 package io.github.ovso.githubusers.data.mapper
 
 import io.github.ovso.githubusers.data.remote.model.UnsplashResponse
-import io.github.ovso.githubusers.data.view.UnsplashModel
+import io.github.ovso.githubusers.data.view.UnsplashItemModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 
-suspend fun List<UnsplashResponse>.toUnsplashModels(): List<UnsplashModel> = withContext(Dispatchers.Default) {
+suspend fun List<UnsplashResponse>.toUnsplashModels(): List<UnsplashItemModel> = withContext(Dispatchers.Default) {
   map {
-    UnsplashModel(
+    UnsplashItemModel(
       altDescription = it.altDescription,
       blurHash = it.blurHash,
       categories = it.categories,

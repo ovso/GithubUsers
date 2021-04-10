@@ -5,7 +5,7 @@ import io.github.ovso.githubusers.data.remote.model.Sponsorship
 import io.github.ovso.githubusers.data.remote.model.Urls
 import io.github.ovso.githubusers.data.remote.model.User
 
-data class UnsplashModel(
+data class UnsplashItemModel(
   val altDescription: String?,
   val blurHash: String?,
   val categories: List<Any>?,
