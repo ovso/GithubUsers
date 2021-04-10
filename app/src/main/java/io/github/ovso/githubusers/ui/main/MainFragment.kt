@@ -8,14 +8,14 @@ import androidx.lifecycle.lifecycleScope
 import com.orhanobut.logger.Logger
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.ovso.githubusers.R
-import io.github.ovso.githubusers.base.BindingFragment
+import io.github.ovso.githubusers.base.BaseFragment
 import io.github.ovso.githubusers.data.prefs.ConfigPreference
-import io.github.ovso.githubusers.databinding.FragmentMainBinding
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class MainFragment : BindingFragment<FragmentMainBinding>(R.layout.fragment_main) {
-  override val viewModel by viewModels<MainViewModel>()
+class MainFragment : BaseFragment(R.layout.fragment_main) {
+
+  private val viewModel: MainViewModel by viewModels()
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
@@ -36,5 +36,6 @@ class MainFragment : BindingFragment<FragmentMainBinding>(R.layout.fragment_main
     viewModel.photosFlow.asLiveData().observe(owner) {
       Logger.d("fragment count: ${it.count()}")
     }
+
   }
 }
