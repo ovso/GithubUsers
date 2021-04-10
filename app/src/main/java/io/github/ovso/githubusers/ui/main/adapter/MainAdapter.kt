@@ -36,7 +36,10 @@ class MainViewHolder private constructor(
   fun onBindViewHolder(item: UnsplashItemModel) {
     Logger.d("item: $item")
 //    binding.ivMainItem.load(item.user?.)
-    binding.ivMainItem.load(item.urls?.small)
+    binding.ivMainItem.load(item.urls?.small) {
+      crossfade(true)
+      crossfade(300)
+    }
   }
 
   companion object {
