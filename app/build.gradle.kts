@@ -139,9 +139,13 @@ dependencies {
   implementation("com.squareup.moshi:moshi-kotlin:${Versions.moshi}")
   kapt("com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshi}")
 
+  // architecture
   implementation("com.airbnb.android:mavericks:${Versions.mvrx}")
 
+  // image loader
   implementation("io.coil-kt:coil:1.1.1")
+
+  implementation("androidx.paging:paging-runtime-ktx:${Versions.paging}")
 
   testImplementation("junit:junit:${Versions.junit}")
   androidTestImplementation("androidx.test.ext:junit:${Versions.atsl_junit}")
