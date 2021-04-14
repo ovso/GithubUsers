@@ -48,7 +48,7 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
     val owner = viewLifecycleOwner
     viewModel.photosFlow.asLiveData().observe(owner) {
       Logger.d("fragment count: ${it.count()}")
-      adapter.items = it.toMutableList()
+//      adapter.items = it.toMutableList()
     }
 
   }

@@ -8,7 +8,7 @@ import javax.inject.Inject
 class MainRepository @Inject constructor(
   private val githubService: GithubService,
   private val unsplashService: UnsplashService
-) : GithubDataSource, UnsplashDataSource {
+) : GithubDataSource {
   override suspend fun getUsers(): List<UserResponse2> {
     return githubService.getUsers()
   }
@@ -17,7 +17,7 @@ class MainRepository @Inject constructor(
     return githubService.getUser()
   }
 
-  override suspend fun getPhotos(page: Int): List<UnsplashResponse> {
+  suspend fun getPhotos(page: Int): List<UnsplashResponse> {
     return unsplashService.getPhotos(page)
   }
 }

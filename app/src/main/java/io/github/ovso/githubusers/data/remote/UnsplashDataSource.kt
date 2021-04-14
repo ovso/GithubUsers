@@ -1,7 +1,16 @@
 package io.github.ovso.githubusers.data.remote
 
-import io.github.ovso.githubusers.data.remote.model.UnsplashResponse
+import androidx.paging.PagingSource
+import androidx.paging.PagingState
+import io.github.ovso.githubusers.data.remote.model.UnsplashPhoto
 
-interface UnsplashDataSource {
-  suspend fun getPhotos(page: Int = 1): List<UnsplashResponse>
+
+class UnsplashDataSource(private val unsplashService: UnsplashService) : PagingSource<Int, UnsplashPhoto>() {
+  override fun getRefreshKey(state: PagingState<Int, UnsplashPhoto>): Int? {
+    TODO("Not yet implemented")
+  }
+
+  override suspend fun load(params: LoadParams<Int>): LoadResult<Int, UnsplashPhoto> {
+    TODO("Not yet implemented")
+  }
 }

@@ -23,7 +23,7 @@ object Versions {
   const val fragment = "1.3.0"
   const val navigation = "2.3.3"
   const val startup = "1.0.0"
-  const val paging = "2.1.2"
+  const val paging = "3.0.0-beta03"
   const val room = "2.2.5"
   const val firebase_bom = "25.12.0"
   const val firebase_ads = "19.4.0"
