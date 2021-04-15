@@ -4,9 +4,14 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import io.github.ovso.githubusers.data.remote.model.UnsplashPhoto
 
+class UnsplashPagingSource(private val unsplashService: UnsplashService) : PagingSource<Int, UnsplashPhoto>() {
 
-class UnsplashDataSource(private val unsplashService: UnsplashService) : PagingSource<Int, UnsplashPhoto>() {
   override fun getRefreshKey(state: PagingState<Int, UnsplashPhoto>): Int? {
+/*
+    return state.anchorPosition?.let { anchorPosition ->
+      state.closestPageToPosition(anchorPosition)?.nextKey
+    }
+*/
     return null
   }
 
@@ -30,4 +35,5 @@ class UnsplashDataSource(private val unsplashService: UnsplashService) : PagingS
       return LoadResult.Error(e)
     }
   }
+
 }
