@@ -47,6 +47,20 @@ android {
       proguardFiles(*files ?: arrayOf())
     }
   }
+
+  flavorDimensions("version")
+  productFlavors {
+    create("develop") {
+
+    }
+    create("staging") {
+
+    }
+    create("production") {
+
+    }
+  }
+
   compileOptions {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
