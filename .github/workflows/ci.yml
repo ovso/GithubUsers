@@ -30,4 +30,4 @@ jobs:
 
       - name: Build with Gradle
 #        run: bash ./gradlew bundleStagingRelease --stacktrace
-        run: bash ./gradlew assembleDebug --stacktrace
+        run: bash ./gradlew assembleRelease --stacktrace
