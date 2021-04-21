@@ -13,6 +13,8 @@ import io.github.ovso.githubusers.base.viewBinding
 import io.github.ovso.githubusers.data.prefs.ConfigPreference
 import io.github.ovso.githubusers.databinding.FragmentMainBinding
 import io.github.ovso.githubusers.ui.main.adapter.MainAdapter
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -38,6 +40,7 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
     observe()
     setupRv()
     Logger.d("adapter: $adapter")
+    search("sunflower")
   }
 
   private fun setupRv() {
@@ -51,5 +54,17 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
 //      adapter.items = it.toMutableList()
     }
 
+  }
+
+  private var searchJob: Job? = null
+
+  private fun search(query: String) {
+    // Make sure we cancel the previous job before creating a new one
+    searchJob?.cancel()
+    searchJob = lifecycleScope.launch {
+      viewModel.searchPictures(query).collectLatest {
+        adapter.submitData(it)
+      }
+    }
   }
 }

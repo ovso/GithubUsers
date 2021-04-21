@@ -4,7 +4,10 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import io.github.ovso.githubusers.data.remote.model.UnsplashPhoto
 
-class UnsplashPagingSource(private val mainRepository: MainRepository) : PagingSource<Int, UnsplashPhoto>() {
+class UnsplashPagingSource(
+  private val service: UnsplashService,
+  private val query:String
+) : PagingSource<Int, UnsplashPhoto>() {
 
   override fun getRefreshKey(state: PagingState<Int, UnsplashPhoto>): Int? {
 /*
@@ -18,8 +21,8 @@ class UnsplashPagingSource(private val mainRepository: MainRepository) : PagingS
   override suspend fun load(params: LoadParams<Int>): LoadResult<Int, UnsplashPhoto> {
     try {
       val nextPage = params.key ?: 1
-      val response = mainRepository.searchPhoto(
-        query = "sunflower",
+      val response = service.searchPhotos(
+        query = query,
         page = nextPage,
         perPage = 10,
         clientId = "9_7SmsO0-DGH6oHXHrM-WUpWDXU92JKtsOG1lXzdyf0"
