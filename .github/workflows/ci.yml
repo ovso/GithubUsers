@@ -54,3 +54,5 @@ jobs:
         with:
           name: mapping.txt
           path: app/build/outputs/mapping/stagingRelease/mapping.txt
+
+
