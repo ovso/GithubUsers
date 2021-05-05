@@ -63,6 +63,7 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
     searchJob?.cancel()
     searchJob = lifecycleScope.launch {
       viewModel.searchPictures(query).collectLatest {
+        Logger.d("pagingData: $it")
         adapter.submitData(it)
       }
     }

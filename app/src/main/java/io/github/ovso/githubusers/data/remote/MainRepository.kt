@@ -36,7 +36,12 @@ class MainRepository @Inject constructor(
   fun getSearchResultStream(query: String): Flow<PagingData<UnsplashPhoto>> {
     return Pager(
       config = PagingConfig(enablePlaceholders = false, pageSize = NETWORK_PAGE_SIZE),
-      pagingSourceFactory = { UnsplashPagingSource(unsplashService, "sunflower") }
+      pagingSourceFactory = {
+        UnsplashPagingSource(
+          service = unsplashService,
+          query = query
+        )
+      }
     ).flow
   }
 

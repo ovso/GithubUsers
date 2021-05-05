@@ -10,12 +10,9 @@ class UnsplashPagingSource(
 ) : PagingSource<Int, UnsplashPhoto>() {
 
   override fun getRefreshKey(state: PagingState<Int, UnsplashPhoto>): Int? {
-/*
     return state.anchorPosition?.let { anchorPosition ->
       state.closestPageToPosition(anchorPosition)?.nextKey
     }
-*/
-    return null
   }
 
   override suspend fun load(params: LoadParams<Int>): LoadResult<Int, UnsplashPhoto> {
@@ -31,7 +28,7 @@ class UnsplashPagingSource(
       return LoadResult.Page(
         data = response.results,
         prevKey = if (nextPage == 1) null else nextPage - 1,
-        nextKey = nextPage
+        nextKey = nextPage + 1
       )
 
     } catch (e: Exception) {
