@@ -25,4 +25,5 @@ data class UnsplashUser(
 data class UnsplashSearchResponse(
   @field:SerializedName("results") val results: List<UnsplashPhoto>,
   @field:SerializedName("total_pages") val totalPages: Int
+
 )
