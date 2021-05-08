@@ -3,18 +3,18 @@ package io.github.ovso.githubusers.data.remote.model
 import com.google.gson.annotations.SerializedName
 
 data class UnsplashPhoto(
-  @field:SerializedName("id") val id: String,
-  @field:SerializedName("urls") val urls: UnsplashPhotoUrls,
-  @field:SerializedName("user") val user: UnsplashUser
+  @SerializedName("id") val id: String,
+  @SerializedName("urls") val urls: UnsplashPhotoUrls,
+  @SerializedName("user") val user: UnsplashUser
 )
 
 data class UnsplashPhotoUrls(
-  @field:SerializedName("small") val small: String
+  @SerializedName("small") val small: String
 )
 
 data class UnsplashUser(
-  @field:SerializedName("name") val name: String,
-  @field:SerializedName("username") val username: String
+  @SerializedName("name") val name: String,
+  @SerializedName("username") val username: String
 ) {
   val attributionUrl: String
     get() {
@@ -23,7 +23,7 @@ data class UnsplashUser(
 }
 
 data class UnsplashSearchResponse(
-  @field:SerializedName("results") val results: List<UnsplashPhoto>,
-  @field:SerializedName("total_pages") val totalPages: Int
+  @SerializedName("results") val results: List<UnsplashPhoto>,
+  @SerializedName("total_pages") val totalPages: Int
 
 )
