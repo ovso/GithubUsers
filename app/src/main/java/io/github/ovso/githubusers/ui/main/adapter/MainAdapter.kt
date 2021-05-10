@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.orhanobut.logger.Logger
 import io.github.ovso.githubusers.data.remote.model.UnsplashPhoto
-import io.github.ovso.githubusers.data.view.UnsplashItemModel
 import io.github.ovso.githubusers.databinding.ItemMainBinding
 import javax.inject.Inject
 
@@ -40,7 +39,6 @@ class MainViewHolder private constructor(
 
   fun onBindViewHolder(item: UnsplashPhoto?) {
     Logger.d("item: $item")
-//    binding.ivMainItem.load(item.user?.)
     binding.ivMainItem.load(item?.urls?.small) {
       crossfade(true)
       crossfade(300)
