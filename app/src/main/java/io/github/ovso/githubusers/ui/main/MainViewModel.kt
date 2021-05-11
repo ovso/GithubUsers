@@ -25,7 +25,7 @@ class MainViewModel @Inject constructor(
   val photosFlow = MutableStateFlow<List<UnsplashItemModel>>(emptyList())
 
   private var currentQueryValue: String? = null
-  private var currentSearchResult: Flow<PagingData<UnsplashPhoto>>? = null
+  var currentSearchResult: Flow<PagingData<UnsplashPhoto>>? = null
 
   fun searchPictures(queryString: String): Flow<PagingData<UnsplashPhoto>> {
     currentQueryValue = queryString
@@ -36,5 +36,6 @@ class MainViewModel @Inject constructor(
   }
 
   init {
+
   }
 }

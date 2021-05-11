@@ -24,7 +24,8 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
   private val viewModel: MainViewModel by viewModels()
   private val binding: FragmentMainBinding by viewBinding()
 
-  @Inject lateinit var adapter:MainAdapter
+  @Inject
+  lateinit var adapter: MainAdapter
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
