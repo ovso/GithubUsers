@@ -49,11 +49,6 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
   }
 
   private fun observe() {
-    val owner = viewLifecycleOwner
-    viewModel.photosFlow.asLiveData().observe(owner) {
-      Logger.d("fragment count: ${it.count()}")
-//      adapter.items = it.toMutableList()
-    }
 
   }
 
@@ -64,7 +59,6 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
     searchJob?.cancel()
     searchJob = lifecycleScope.launch {
       viewModel.searchPictures(query).collectLatest {
-        Logger.d("pagingData: $it")
         adapter.submitData(it)
       }
     }
