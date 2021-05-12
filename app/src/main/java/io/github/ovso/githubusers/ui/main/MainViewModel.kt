@@ -17,12 +17,7 @@ class MainViewModel @Inject constructor(
   savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
-  init {
+  fun searchPictures(query: String): Flow<PagingData<UnsplashPhoto>> {
+    return repository.getSearchResultStream(query).cachedIn(viewModelScope)
   }
-
-  val searchResult = repository.getSearchResultStream("sunflower").cachedIn(viewModelScope)
-  fun searchPictures(queryString: String): Flow<PagingData<UnsplashPhoto>> {
-    return repository.getSearchResultStream(queryString).cachedIn(viewModelScope)
-  }
-
 }
