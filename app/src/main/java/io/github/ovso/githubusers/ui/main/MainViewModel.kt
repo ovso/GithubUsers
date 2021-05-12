@@ -9,7 +9,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import io.github.ovso.githubusers.data.remote.MainRepository
 import io.github.ovso.githubusers.data.remote.model.UnsplashPhoto
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
 import javax.inject.Inject
 
 @HiltViewModel
@@ -21,6 +20,7 @@ class MainViewModel @Inject constructor(
   init {
   }
 
+  val searchResult = repository.getSearchResultStream("sunflower").cachedIn(viewModelScope)
   fun searchPictures(queryString: String): Flow<PagingData<UnsplashPhoto>> {
     return repository.getSearchResultStream(queryString).cachedIn(viewModelScope)
   }

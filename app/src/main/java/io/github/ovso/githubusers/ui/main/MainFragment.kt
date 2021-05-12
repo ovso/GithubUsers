@@ -58,7 +58,12 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
     // Make sure we cancel the previous job before creating a new one
     searchJob?.cancel()
     searchJob = lifecycleScope.launch {
+/*
       viewModel.searchPictures(query).collectLatest {
+        adapter.submitData(it)
+      }
+*/
+      viewModel.searchResult.collectLatest {
         adapter.submitData(it)
       }
     }
